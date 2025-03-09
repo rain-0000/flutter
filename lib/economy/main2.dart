@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'SideBarDemoPage.dart';
+import 'SideBarIndustrialPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -115,7 +116,7 @@ class _MainPageState extends State<MainPage> {
                             ),
                           ),
                           Text(
-                            "生物篇",
+                            "工业篇",
                             style: TextStyle(
                                 fontWeight: FontWeight.w900,
                                 fontSize: 15,
@@ -127,7 +128,7 @@ class _MainPageState extends State<MainPage> {
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) {
-                          return SideBarDemoPage(
+                          return SideBarIndustrialPage(
                               constraints: containers); //返回的是需要跳转单页面
                         },
                       ));
