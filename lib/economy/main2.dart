@@ -57,9 +57,11 @@ class _MainPageState extends State<MainPage> {
                   ],
                 ),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment:CrossAxisAlignment.start,
+              child:
+              Wrap(
+                alignment: WrapAlignment.spaceAround, // 确保所有行靠左对齐
+                spacing: 10.0, // 子元素之间的间距
+                runSpacing: 10.0, // 行之间的间距
                 children: [
                   GestureDetector(
                     child: Container(
@@ -95,9 +97,114 @@ class _MainPageState extends State<MainPage> {
                         },
                       ));
                     },
+                  ),
+                  GestureDetector(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            width: 100,
+                            height: 100,
+                            child: SvgPicture.asset(
+                              "images/sw.svg",
+                            ),
+                          ),
+                          Text(
+                            "生物篇",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w900,
+                                fontSize: 15,
+                                color: Colors.black54),
+                          )
+                        ],
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) {
+                          return SideBarDemoPage(
+                              constraints: containers); //返回的是需要跳转单页面
+                        },
+                      ));
+                    },
+                  ),
+                  GestureDetector(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            width: 100,
+                            height: 100,
+                            child: SvgPicture.asset(
+                              "images/sw.svg",
+                            ),
+                          ),
+                          Text(
+                            "生物篇",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w900,
+                                fontSize: 15,
+                                color: Colors.black54),
+                          )
+                        ],
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) {
+                          return SideBarDemoPage(
+                              constraints: containers); //返回的是需要跳转单页面
+                        },
+                      ));
+                    },
+                  ),
+                  GestureDetector(
+                    child: Container(
+                      // decoration: BoxDecoration(
+                      //   // color: Colors.grey,
+                      //   borderRadius: BorderRadius.circular(10),
+                      // ),
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            width: 100,
+                            height: 100,
+                            // child: SvgPicture.asset(
+                            //   "images/sw.svg",
+                            // ),
+                          ),
+                          // Text(
+                          //   "生物篇",
+                          //   style: TextStyle(
+                          //       fontWeight: FontWeight.w900,
+                          //       fontSize: 15,
+                          //       color: Colors.black54),
+                          // )
+                        ],
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) {
+                          return SideBarDemoPage(
+                              constraints: containers); //返回的是需要跳转单页面
+                        },
+                      ));
+                    },
                   )
                 ],
-              ),
+              )
             );
           },
         ));
