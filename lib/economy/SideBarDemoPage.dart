@@ -138,13 +138,17 @@ class _SideBarDemoPageState extends State<SideBarDemoPage> {
       "向日葵属·Helianthus": {"葵花籽": null},
       "菊属·Chrysanthemum": {"菊花": null}
     },
-    "胡桃科": {
-      "胡桃属·Juglans": {"核桃": null},
-      "黄杞属·Engelhardtia": {"大叶茶": null}
+    "壳斗目":{
+      "壳斗科":{
+        "栗属·Castanea": {"板栗": null}
+      },
+      "胡桃科": {
+        "胡桃属·Juglans": {"核桃": null},
+        "黄杞属·Engelhardtia": {"大叶茶": null}
+      },
     },
-    "栗科": {
-      "栗属·Castanea": {"板栗": null}
-    },
+
+
     "蔷薇目": {
       "蔷薇科": {
         "草莓属·Fragaria": {"草莓": null},
@@ -476,8 +480,9 @@ class _SideBarDemoPageState extends State<SideBarDemoPage> {
               return SizedBox(
                 width: (MediaQuery.of(context).size.width * 0.75 - 20) / 3,
                 child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 10,top: 10),
+                    padding: const EdgeInsets.all(2.0),
                     child: GestureDetector(
                       child: Text(
                           style: TextStyle(color: Colors.black54),
@@ -536,8 +541,9 @@ class _SideBarDemoPageState extends State<SideBarDemoPage> {
             return SizedBox(
               width: (MediaQuery.of(context).size.width * 0.75 - 20) / 3,
               child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(5.0),
+                child: Container(
+                  margin: EdgeInsets.only(bottom: 10,top: 10),
+                  padding: const EdgeInsets.all(2.0),
                   child: GestureDetector(
                     child: Text(
                         style: TextStyle(color: Colors.black54),
@@ -660,11 +666,14 @@ class _SideBarDemoPageState extends State<SideBarDemoPage> {
               )
             : null,
         child: ListTile(
-          title: Text(
-            title,
-            style: TextStyle(
-              fontSize: 10,
-              color: _selectedItem == title ? Colors.white : Colors.black54,
+          contentPadding: EdgeInsets.zero,
+          title: Center(
+            child: Text(
+              title,
+              style: TextStyle(
+                fontSize: 15,
+                color: _selectedItem == title ? Colors.white : Colors.black54,
+              ),
             ),
           ),
           onTap: () {
